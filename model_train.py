@@ -14,10 +14,10 @@ from keras.models import Model
 from tqdm import tqdm
 
 maxlen = 200
-batch_size = 16
-config_path = './albert_tiny_google_zh_489k/albert_config.json'
-checkpoint_path = './albert_tiny_google_zh_489k/albert_model.ckpt'
-dict_path = './albert_tiny_google_zh_489k/vocab.txt'
+batch_size = 8
+config_path = './chinese-RoBERTa-wwm-ext/bert_config.json'
+checkpoint_path = './chinese-RoBERTa-wwm-ext/bert_model.ckpt'
+dict_path = './chinese-RoBERTa-wwm-ext/vocab.txt'
 
 
 def load_data(filename):
@@ -143,7 +143,6 @@ object_labels = Input(shape=(None, len(predicate2id), 2), name='Object-Labels')
 bert = build_transformer_model(
     config_path=config_path,
     checkpoint_path=checkpoint_path,
-    model="albert",
     return_keras_model=False
 )
 
@@ -328,6 +327,6 @@ if __name__ == '__main__':
     train_model.fit(
         train_generator.forfit(),
         steps_per_epoch=len(train_generator),
-        epochs=100,
+        epochs=20,
         callbacks=[evaluator]
     )

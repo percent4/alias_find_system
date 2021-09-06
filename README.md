@@ -29,7 +29,7 @@
 
 训练集数据:测试集数据=8:2
 
-maxlen=200, batch_size=16, epoch=50, 使用Google Colab训练（预训练模型为albert_tiny_google_zh_489k）, 在测试集上的F1值为76.85%
+maxlen=200, batch_size=8, epoch=20, 使用Google Colab训练（预训练模型为`哈工大的中文Roberta模型: chinese-RoBERTa-wwm-ext`）, 在测试集上的F1值为87.18%
 
 ### 模型预测
 

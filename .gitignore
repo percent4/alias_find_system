@@ -2,4 +2,4 @@
 data/data_from_ccf2019.py
 data/alias_*
 models
-albert_tiny_google_zh_489k
+chinese-RoBERTa-wwm-ext

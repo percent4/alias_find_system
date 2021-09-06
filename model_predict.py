@@ -19,9 +19,9 @@ from keras.models import Model
 
 
 maxlen = 200
-config_path = './albert_tiny_google_zh_489k/albert_config.json'
-checkpoint_path = './albert_tiny_google_zh_489k/albert_model.ckpt'
-dict_path = './albert_tiny_google_zh_489k/vocab.txt'
+config_path = './chinese-RoBERTa-wwm-ext/bert_config.json'
+checkpoint_path = './chinese-RoBERTa-wwm-ext/bert_model.ckpt'
+dict_path = './chinese-RoBERTa-wwm-ext/vocab.txt'
 
 predicate2id, id2predicate = {}, {}
 
@@ -44,7 +44,6 @@ object_labels = Input(shape=(None, len(predicate2id), 2), name='Object-Labels')
 bert = build_transformer_model(
     config_path=config_path,
     checkpoint_path=checkpoint_path,
-    model="albert",
     return_keras_model=False,
 )
 
