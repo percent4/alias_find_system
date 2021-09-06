@@ -23,6 +23,19 @@
 |文件名称|数据来源|标注样本数量|
 |---|---|---|
 |data/ccf2019_corpus.json|CCF2019年关系抽取比赛数据|3369|
+|data/sougouqa_webqa_corpus.json|阅读理解数据（WebQA & SougouQA）|160|
+
+### 模型训练
+
+训练集数据:测试集数据=8:2
+
+maxlen=200, batch_size=16, epoch=50, 使用Google Colab训练（预训练模型为albert_tiny_google_zh_489k）, 在测试集上的F1值为76.85%
+
+### 模型预测
+
+```
+
+```
 
 ### 备注
 
