@@ -23,13 +23,13 @@
 |文件名称|数据来源|标注样本数量|
 |---|---|---|
 |data/ccf2019_corpus.json|CCF2019年关系抽取比赛数据|3369|
-|data/sougouqa_webqa_corpus.json|阅读理解数据（WebQA & SougouQA）|295|
+|data/sougouqa_webqa_corpus.json|阅读理解数据（WebQA & SougouQA）|527|
 
 ### 模型训练
 
 训练集数据:测试集数据=8:2
 
-maxlen=200, batch_size=8, epoch=20, 使用Google Colab训练（预训练模型为`哈工大的中文Roberta模型: chinese-RoBERTa-wwm-ext`）, 在测试集上的F1值为87.18%
+maxlen=200, batch_size=16, epoch=20, 使用Google Colab训练（预训练模型为`哈工大的中文Roberta模型: chinese-RoBERTa-wwm-ext`）, 在测试集上的F1值为88.97%
 
 ### 模型预测
 
@@ -39,6 +39,21 @@ maxlen=200, batch_size=8, epoch=20, 使用Google Colab训练（预训练模型�
 预测结果:
 
 [("杨桃", "别名", "阳桃"), ("杨桃", "别名", "羊桃"), ("杨桃", "别名", "五棱子"), ("杨桃", "别名", "五敛子"), ("杨桃", "别名", "星梨")]
+```
+
+```
+关羽去世后，逐渐被神化，被民间尊为“关公”，又称美髯公。
+预测结果:
+
+[("关羽", "别名", "关公"), ("关羽", "别名", "美髯公")]
+```
+
+```
+英吉利海峡隧道(thechanneltunnel)又称英法海底隧道或欧洲隧道(eurotunnel)，是一条把英国英伦三岛连接往欧洲法国的铁路隧道，于1994年5月6日开通。
+
+预测结果:
+
+[("英吉利海峡隧道", "别名", "英法海底隧道"), ("英吉利海峡隧道", "别名", "欧洲隧道")]
 ```
 
 ### 备注

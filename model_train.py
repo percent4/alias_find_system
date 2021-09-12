@@ -14,7 +14,7 @@ from keras.models import Model
 from tqdm import tqdm
 
 maxlen = 200
-batch_size = 8
+batch_size = 16
 config_path = './chinese-RoBERTa-wwm-ext/bert_config.json'
 checkpoint_path = './chinese-RoBERTa-wwm-ext/bert_model.ckpt'
 dict_path = './chinese-RoBERTa-wwm-ext/vocab.txt'

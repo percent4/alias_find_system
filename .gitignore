@@ -3,3 +3,4 @@ data/data_from_ccf2019.py
 data/alias_*
 models
 chinese-RoBERTa-wwm-ext
+data/sougouqa_webqa_tagging_corpus.json

@@ -1,0 +1,4 @@
+tensorflow==1.14.0
+tensorflow-gpu==1.14.0
+Keras==2.2.4
+bert4keras==0.10.7

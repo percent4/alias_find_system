@@ -165,5 +165,21 @@ def extract_spoes(text):
 
 
 if __name__ == '__main__':
-    new_text = "机场三字代码简称“三字代码”,由国际航空运输协会(IATA ,International Air Transport Association)制定、用于代表全世界大多数机场的代码。"
-    print(extract_spoes(new_text))
+    # new_text = "亦庄开发区也称北京经济技术开发区,位于大兴区东北部地区;筹建于1991年,1992年开始建设并对外招商,1994年8月25日被国务院批准为国家级经济技术开发区。"
+    # print(extract_spoes(new_text))
+    import json
+    with open("./data/sougouqa_webqa_corpus.json", "r", encoding="utf-8") as f:
+        content = json.loads(f.read())
+
+    # 模型预测
+    g = open("sougouqa_webqa_predict.json", "a", encoding="utf-8")
+    i = 0
+    for line in content:
+        if not line["spo"][0][0]:
+            i += 1
+            new_text = line["text"]
+            spo = [list(_) for _ in extract_spoes(new_text)]
+            print(i, spo, new_text)
+            g.write(json.dumps({"spo": spo, "text": new_text}, ensure_ascii=False)+"\n")
+
+    g.close()

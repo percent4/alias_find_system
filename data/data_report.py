@@ -10,10 +10,11 @@ with open("ccf2019_corpus.json", "r", encoding="utf-8") as f:
     content = json.loads(f.read())
 
 with open("sougouqa_webqa_corpus.json", "r", encoding="utf-8") as f:
-    content.extend([_ for _ in json.loads(f.read()) if _["spo"][0][0]])
+    content.extend([_ for _ in json.loads(f.read()) if not _["spo"] or _["spo"][0][0]])
 
 # 简单数据统计
 print(f"共有{len(content)}条标注样本")
+print(len(content) - 3369)
 print("data review for last 10 samples: ")
 for example in content[-10:]:
     print(example)
