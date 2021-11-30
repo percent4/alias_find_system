@@ -23,7 +23,7 @@
 |文件名称|数据来源|标注样本数量|
 |---|---|---|
 |data/ccf2019_corpus.json|CCF2019年关系抽取比赛数据|3369|
-|data/sougouqa_webqa_corpus.json|阅读理解数据（WebQA & SougouQA）|862|
+|data/sougouqa_webqa_corpus.json|阅读理解数据（WebQA & SougouQA）|1056|
 
 ### 模型训练
 
